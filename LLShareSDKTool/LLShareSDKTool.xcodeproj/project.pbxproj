@@ -35,7 +35,6 @@
 		892827651CB63AE1004A2F83 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 892827641CB63AE1004A2F83 /* libz.tbd */; };
 		892827671CB63AF6004A2F83 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 892827661CB63AF6004A2F83 /* libstdc++.tbd */; };
 		892827691CB63B05004A2F83 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 892827681CB63B05004A2F83 /* JavaScriptCore.framework */; };
-		899486231CB65857007BFEB2 /* nnnnnnn.m in Sources */ = {isa = PBXBuildFile; fileRef = 899486221CB65857007BFEB2 /* nnnnnnn.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,8 +106,6 @@
 		892827641CB63AE1004A2F83 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		892827661CB63AF6004A2F83 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		892827681CB63B05004A2F83 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		899486211CB65857007BFEB2 /* nnnnnnn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nnnnnnn.h; sourceTree = "<group>"; };
-		899486221CB65857007BFEB2 /* nnnnnnn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = nnnnnnn.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,8 +177,6 @@
 				8928269D1CB62F7A004A2F83 /* AppDelegate.m */,
 				8928269F1CB62F7A004A2F83 /* ViewController.h */,
 				892826A01CB62F7A004A2F83 /* ViewController.m */,
-				899486211CB65857007BFEB2 /* nnnnnnn.h */,
-				899486221CB65857007BFEB2 /* nnnnnnn.m */,
 				892826A21CB62F7A004A2F83 /* Main.storyboard */,
 				892826A51CB62F7A004A2F83 /* Assets.xcassets */,
 				892826A71CB62F7A004A2F83 /* LaunchScreen.storyboard */,
@@ -465,7 +460,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				892826A11CB62F7A004A2F83 /* ViewController.m in Sources */,
-				899486231CB65857007BFEB2 /* nnnnnnn.m in Sources */,
 				8928269E1CB62F7A004A2F83 /* AppDelegate.m in Sources */,
 				892826CF1CB63245004A2F83 /* LLShareSDKTool.m in Sources */,
 				8928269B1CB62F7A004A2F83 /* main.m in Sources */,
