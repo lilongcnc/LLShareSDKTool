@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import <ShareSDK/ShareSDK.h>
+#import <ShareSDKConnector/ShareSDKConnector.h>
+#import "WXApi.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +19,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+//    [self registerShare];
     return YES;
 }
 
@@ -42,4 +45,47 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+
+
+//分享功能
+static NSString *const ShareAppKey = @"99c0f8716494";
+
+//微信分享
+static NSString *const WXShareAppID = @"wx63383dfb47aa5873";
+static NSString *const WXShareAppSecret = @"e3e9f51d5d35878505787a2b56af4efe";
+
+
+
+#pragma mark - ShareSDK 注册
+-(void)registerShare
+{
+    NSLog(@"%s",__FUNCTION__);
+    
+    //registerApp 初始化SDK并且初始化第三方平台
+    [ShareSDK registerApp:ShareAppKey
+          activePlatforms:@[@(SSDKPlatformSubTypeWechatSession),
+                            @(SSDKPlatformSubTypeWechatTimeline)]
+                 onImport:^(SSDKPlatformType platformType) {
+                     switch (platformType)
+                     {
+                         case SSDKPlatformTypeWechat:{
+                             [ShareSDKConnector connectWeChat:[WXApi class]];
+                             break;
+                         }
+                         default:
+                             break;
+                     }
+                     
+                 } onConfiguration:^(SSDKPlatformType platformType, NSMutableDictionary *appInfo) {
+                     switch (platformType)
+                     {
+                         case SSDKPlatformTypeWechat:
+                             [appInfo SSDKSetupWeChatByAppId:WXShareAppID appSecret:WXShareAppSecret];
+                             break;
+                         default:
+                             break;
+                     }
+                 }
+     ];
+}
 @end
