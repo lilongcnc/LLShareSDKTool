@@ -24,7 +24,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>com.zhuoyunkeji.ZYHTSuperPay</string>
+			<string>com.lauren.LLShareSDKTool</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>wxf9b19185fadfb46c</string>

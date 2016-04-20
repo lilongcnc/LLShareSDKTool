@@ -10,17 +10,34 @@
 #import <ShareSDK/ShareSDK.h>
 #import <ShareSDKConnector/ShareSDKConnector.h>
 #import <ShareSDKUI/ShareSDKUI.h>
+
+//腾讯开放平台（对应QQ和QQ空间）SDK头文件
+#import <TencentOpenAPI/TencentOAuth.h>
+#import <TencentOpenAPI/QQApiInterface.h>
+
+//微信SDK头文件
 #import "WXApi.h"
+
+//新浪微博SDK头文件
+//新浪微博SDK需要在项目Build Settings中的Other Linker Flags添加"-ObjC"
+#import "WeiboSDK.h"
 
 @implementation LLShareSDKTool
 
 //分享功能
 static NSString *const ShareAppKey = @"99c0f8716494";
 
-//微信分享
+//微信开放平台,申请地址:https://open.weixin.qq.com/
 static NSString *const WXShareAppID = @"wxf9b19185fadfb46c";
 static NSString *const WXShareAppSecret = @"46994e1b3690840ca54a085f076d79c2";
 
+//新浪分享:申请地址http://open.weibo.com/apps/192207424/info/basic
+static NSString *const SinaShareAppKey = @"";
+static NSString *const SinaShareAppSecret = @"";
+
+//腾讯开发者开发者平台,申请地址:
+static NSString *const QQShareAppID = @"wxf9b19185fadfb46c";
+static NSString *const QQShareAppSecret = @"46994e1b3690840ca54a085f076d79c2";
 
 + (void)initialize{
     
@@ -35,7 +52,8 @@ static NSString *const WXShareAppSecret = @"46994e1b3690840ca54a085f076d79c2";
     //registerApp 初始化SDK并且初始化第三方平台
     [ShareSDK registerApp:ShareAppKey
           activePlatforms:@[@(SSDKPlatformSubTypeWechatSession),
-                            @(SSDKPlatformSubTypeWechatTimeline)]
+                            @(SSDKPlatformSubTypeWechatTimeline),
+                            @(SSDKPlatformTypeSinaWeibo)]
                  onImport:^(SSDKPlatformType platformType) {
                      switch (platformType)
                      {
@@ -43,6 +61,12 @@ static NSString *const WXShareAppSecret = @"46994e1b3690840ca54a085f076d79c2";
                              [ShareSDKConnector connectWeChat:[WXApi class]];
                              break;
                          }
+                         case SSDKPlatformTypeSinaWeibo:
+                             [ShareSDKConnector connectWeibo:[WeiboSDK class]];
+                             break;
+                         case SSDKPlatformTypeQQ:
+                             [ShareSDKConnector connectQQ:[QQApiInterface class] tencentOAuthClass:[TencentOAuth class]];
+                             break;
                          default:
                              break;
                      }
@@ -51,7 +75,20 @@ static NSString *const WXShareAppSecret = @"46994e1b3690840ca54a085f076d79c2";
                      switch (platformType)
                      {
                          case SSDKPlatformTypeWechat:
-                             [appInfo SSDKSetupWeChatByAppId:WXShareAppID appSecret:WXShareAppSecret];
+                             [appInfo SSDKSetupWeChatByAppId:WXShareAppID
+                                                   appSecret:WXShareAppSecret];
+                             break;
+                         case SSDKPlatformTypeSinaWeibo:
+                             //设置新浪微博应用信息,其中authType设置为使用SSO＋Web形式授权
+                             [appInfo SSDKSetupSinaWeiboByAppKey:@"568898243"
+                                                       appSecret:@"38a4f8204cc784f81f9f0daaf31e02e3"
+                                                     redirectUri:@"http://www.sharesdk.cn"
+                                                        authType:SSDKAuthTypeBoth];
+                             break;
+                         case SSDKPlatformTypeQQ:
+                             [appInfo SSDKSetupQQByAppId:@"100371282"
+                                                  appKey:@"aed9b0303e3ed1e27bae87c33761161d"
+                                                authType:SSDKAuthTypeBoth];
                              break;
                          default:
                              break;

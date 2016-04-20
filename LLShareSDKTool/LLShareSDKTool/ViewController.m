@@ -21,7 +21,8 @@
 }
 
 
-- (IBAction)shareBtnOnClick:(id)sender {
+- (IBAction)shareBtnOnClick:(UIButton *)sender {
+    sender.hidden = YES;
     [self shareBtnOnClick];
 }
 

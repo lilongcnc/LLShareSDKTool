@@ -627,6 +627,7 @@
 					"$(PROJECT_DIR)/LLShareSDKTool/ShareSDK/Support/PlatformSDK/SinaWeiboSDK",
 					"$(PROJECT_DIR)/LLShareSDKTool/ShareSDK/Support/PlatformSDK/WeChatSDK",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lauren.LLShareSDKTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -656,6 +657,7 @@
 					"$(PROJECT_DIR)/LLShareSDKTool/ShareSDK/Support/PlatformSDK/SinaWeiboSDK",
 					"$(PROJECT_DIR)/LLShareSDKTool/ShareSDK/Support/PlatformSDK/WeChatSDK",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lauren.LLShareSDKTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
