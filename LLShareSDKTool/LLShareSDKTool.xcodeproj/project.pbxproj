@@ -172,11 +172,10 @@
 				892826A21CB62F7A004A2F83 /* Main.storyboard */,
 				8928269F1CB62F7A004A2F83 /* ViewController.h */,
 				892826A01CB62F7A004A2F83 /* ViewController.m */,
-				892826B21CB62F7A004A2F83 /* LLShareSDKToolTests */,
 				892826CC1CB63228004A2F83 /* LLShareSDKTool */,
 				8928272B1CB638E9004A2F83 /* ShareSDK */,
-				892826991CB62F7A004A2F83 /* Supporting Files */,
 				8928275C1CB63A1E004A2F83 /* framework */,
+				892826991CB62F7A004A2F83 /* Supporting Files */,
 			);
 			path = LLShareSDKTool;
 			sourceTree = "<group>";
@@ -314,6 +313,7 @@
 		8928275C1CB63A1E004A2F83 /* framework */ = {
 			isa = PBXGroup;
 			children = (
+				892826B21CB62F7A004A2F83 /* LLShareSDKToolTests */,
 				8928275E1CB63A7C004A2F83 /* ImageIO.framework */,
 				892827681CB63B05004A2F83 /* JavaScriptCore.framework */,
 				892827621CB63AD5004A2F83 /* libicucore.tbd */,
@@ -607,6 +607,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -635,6 +636,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
