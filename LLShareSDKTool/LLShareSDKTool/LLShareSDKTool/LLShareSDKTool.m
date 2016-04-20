@@ -18,8 +18,8 @@
 static NSString *const ShareAppKey = @"99c0f8716494";
 
 //微信分享
-static NSString *const WXShareAppID = @"wx63383dfb47aa5873";
-static NSString *const WXShareAppSecret = @"e3e9f51d5d35878505787a2b56af4efe";
+static NSString *const WXShareAppID = @"wxf9b19185fadfb46c";
+static NSString *const WXShareAppSecret = @"46994e1b3690840ca54a085f076d79c2";
 
 
 + (void)initialize{
