@@ -22,7 +22,7 @@
 
 
 - (IBAction)shareBtnOnClick:(UIButton *)sender {
-    sender.hidden = YES;
+//    sender.hidden = YES;
     [self shareBtnOnClick];
 }
 
@@ -32,7 +32,7 @@
 -(void)shareBtnOnClick{
 
     //Tips: LLShareContentTypeAuto类型情况下,如果分享图片的话,contentURL直接设置为nil;如果分享链接,则不设置为nil
-    [LLShareSDKTool shareContentWithShareContentType:LLShareContentTypeAuto contentTitle:@"测试分享" contentDescription:@"李龙的技术分享博客" contentImage:[UIImage imageNamed:@"test"] contentURL:@"http://lilongcnc.cc" showInView:self.view success:^{
+    [LLShareSDKTool shareContentWithShareContentType:LLShareContentTypeAuto contentTitle:@"测试分享" contentDescription:@"李龙的技术分享博客 http://www.lilongcnc.cc" contentImage:[UIImage imageNamed:@"test"] contentURL:@"http://lilongcnc.cc" showInView:self.view success:^{
         
         NSLog(@"分享成功");
     } failure:^(NSString *failureInfo) {

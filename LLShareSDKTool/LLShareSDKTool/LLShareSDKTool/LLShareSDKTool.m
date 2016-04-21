@@ -32,12 +32,13 @@ static NSString *const WXShareAppID = @"wxf9b19185fadfb46c";
 static NSString *const WXShareAppSecret = @"46994e1b3690840ca54a085f076d79c2";
 
 //新浪分享:申请地址http://open.weibo.com/apps/192207424/info/basic
-static NSString *const SinaShareAppKey = @"";
-static NSString *const SinaShareAppSecret = @"";
+static NSString *const SinaShareAppKey = @"192207424";
+static NSString *const SinaShareAppSecret = @"1ea33dd254dbcb2579cffc670a1336c5";
+static NSString *const SinaOAuthWebAddress = @"http://www.lilongcnc.cc";
 
-//腾讯开发者开发者平台,申请地址:
-static NSString *const QQShareAppID = @"wxf9b19185fadfb46c";
-static NSString *const QQShareAppSecret = @"46994e1b3690840ca54a085f076d79c2";
+//腾讯开发者开发者平台,申请地址:http://open.qq.com/
+static NSString *const QQShareAppID = @"";
+static NSString *const QQShareAppSecret = @"";
 
 + (void)initialize{
     
@@ -80,9 +81,9 @@ static NSString *const QQShareAppSecret = @"46994e1b3690840ca54a085f076d79c2";
                              break;
                          case SSDKPlatformTypeSinaWeibo:
                              //设置新浪微博应用信息,其中authType设置为使用SSO＋Web形式授权
-                             [appInfo SSDKSetupSinaWeiboByAppKey:@"568898243"
-                                                       appSecret:@"38a4f8204cc784f81f9f0daaf31e02e3"
-                                                     redirectUri:@"http://www.sharesdk.cn"
+                             [appInfo SSDKSetupSinaWeiboByAppKey:SinaShareAppKey
+                                                       appSecret:SinaShareAppSecret
+                                                     redirectUri:SinaOAuthWebAddress
                                                         authType:SSDKAuthTypeBoth];
                              break;
                          case SSDKPlatformTypeQQ:
@@ -147,8 +148,8 @@ static NSString *const QQShareAppSecret = @"46994e1b3690840ca54a085f076d79c2";
                                        type:type];
     
     //2. 分享,显示分享view
-    [ShareSDK showShareActionSheet:showInView
-                             items:nil
+    SSUIShareActionSheetController *sheet =[ShareSDK showShareActionSheet:showInView
+                             items:@[@(SSDKPlatformTypeSinaWeibo),@(SSDKPlatformSubTypeQZone),@(SSDKPlatformSubTypeQQFriend),@(SSDKPlatformSubTypeWechatSession),@(SSDKPlatformSubTypeWechatTimeline)]
                        shareParams:shareParams
                onShareStateChanged:^(SSDKResponseState state, SSDKPlatformType platformType, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error, BOOL end) {
                    
@@ -217,6 +218,9 @@ static NSString *const QQShareAppSecret = @"46994e1b3690840ca54a085f076d79c2";
                    }
                    
                }];
+    
+    
+       [sheet.directSharePlatforms addObject:@(SSDKPlatformTypeSinaWeibo)];
 }
 
 
