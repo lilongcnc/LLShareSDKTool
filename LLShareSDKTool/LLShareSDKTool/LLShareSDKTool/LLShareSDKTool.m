@@ -141,6 +141,8 @@ static NSString *const QQShareAppSecret = @"";
     
     //1. 创建分享参数
     NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
+    [shareParams SSDKEnableUseClientShare]; //这个参数控制是"应用内分享(网页分享)" 还是客户端分享. 不加的话是'应用内分享(网页分享)'
+    
     [shareParams SSDKSetupShareParamsByText:contentDescription
                                      images:contentImage
                                         url:[NSURL URLWithString:contentURL]
@@ -220,7 +222,7 @@ static NSString *const QQShareAppSecret = @"";
                }];
     
     
-       [sheet.directSharePlatforms addObject:@(SSDKPlatformTypeSinaWeibo)];
+       [sheet.directSharePlatforms addObject:@(SSDKPlatformTypeSinaWeibo)]; //这句话是取消掉 sahreSDK自带的 分享内容编辑界面
 }
 
 
