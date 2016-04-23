@@ -17,11 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgView" translatesAutoresizingMaskIntoConstraints="NO" id="cvL-Ak-S0u">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JaR-KS-DWv">
-                                <rect key="frame" x="150" y="278" width="300" height="45"/>
+                                <rect key="frame" x="150" y="178" width="300" height="45"/>
                                 <color key="backgroundColor" red="0.28997179865837097" green="0.85651952028274536" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="m3J-2Y-tZ6"/>
@@ -31,6 +28,11 @@
                                 <state key="normal" title="share">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="shareBtnOnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aM0-7d-Ujj"/>
                                 </connections>
@@ -38,11 +40,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cvL-Ak-S0u" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="8cA-9d-YQa"/>
-                            <constraint firstItem="cvL-Ak-S0u" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="EaI-Bg-DLd"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cvL-Ak-S0u" secondAttribute="bottom" id="HT1-jA-6jY"/>
-                            <constraint firstAttribute="trailing" secondItem="cvL-Ak-S0u" secondAttribute="trailing" id="UEr-TE-gIJ"/>
-                            <constraint firstItem="JaR-KS-DWv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Ytv-Ze-q49"/>
+                            <constraint firstItem="JaR-KS-DWv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-100" id="Ytv-Ze-q49"/>
                             <constraint firstItem="JaR-KS-DWv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aL8-tK-Hgt"/>
                         </constraints>
                     </view>
@@ -52,7 +50,4 @@
             <point key="canvasLocation" x="301" y="439"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="bgView" width="750" height="1299"/>
-    </resources>
 </document>

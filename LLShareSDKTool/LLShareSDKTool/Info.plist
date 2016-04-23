@@ -45,6 +45,16 @@
 				<string>wb192207424</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.lauren.LLShareSDKTool</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>QQ41E1EDBC</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
@@ -64,9 +74,13 @@
 		<string>mqqapi</string>
 		<string>mqq</string>
 		<string>sinaweibo</string>
-		<string>wechat</string>
 		<string>mqzone</string>
-		<string>weixin</string>
+		<string>mqzonewx</string>
+		<string>mqzoneopensdkapiV2</string>
+		<string>mqzoneopensdkapi19</string>
+		<string>mqzoneopensdkapi</string>
+        <string>wechat</string>
+        <string>weixin</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>

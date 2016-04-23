@@ -37,8 +37,8 @@ static NSString *const SinaShareAppSecret = @"1ea33dd254dbcb2579cffc670a1336c5";
 static NSString *const SinaOAuthWebAddress = @"http://www.lilongcnc.cc";
 
 //腾讯开发者开发者平台,申请地址:http://open.qq.com/
-static NSString *const QQShareAppID = @"";
-static NSString *const QQShareAppSecret = @"";
+static NSString *const QQShareAppID = @"1105325500";
+static NSString *const QQShareAppSecret = @"yzdzzamAbjQfklUg";
 
 + (void)initialize{
     
@@ -54,6 +54,7 @@ static NSString *const QQShareAppSecret = @"";
     [ShareSDK registerApp:ShareAppKey
           activePlatforms:@[@(SSDKPlatformSubTypeWechatSession),
                             @(SSDKPlatformSubTypeWechatTimeline),
+                            @(SSDKPlatformTypeQQ),
                             @(SSDKPlatformTypeSinaWeibo)]
                  onImport:^(SSDKPlatformType platformType) {
                      switch (platformType)
@@ -87,8 +88,8 @@ static NSString *const QQShareAppSecret = @"";
                                                         authType:SSDKAuthTypeBoth];
                              break;
                          case SSDKPlatformTypeQQ:
-                             [appInfo SSDKSetupQQByAppId:@"100371282"
-                                                  appKey:@"aed9b0303e3ed1e27bae87c33761161d"
+                             [appInfo SSDKSetupQQByAppId:QQShareAppID
+                                                  appKey:QQShareAppSecret
                                                 authType:SSDKAuthTypeBoth];
                              break;
                          default:
@@ -151,7 +152,7 @@ static NSString *const QQShareAppSecret = @"";
     
     //2. 分享,显示分享view
     SSUIShareActionSheetController *sheet =[ShareSDK showShareActionSheet:showInView
-                             items:@[@(SSDKPlatformTypeSinaWeibo),@(SSDKPlatformSubTypeQZone),@(SSDKPlatformSubTypeQQFriend),@(SSDKPlatformSubTypeWechatSession),@(SSDKPlatformSubTypeWechatTimeline)]
+                             items:nil
                        shareParams:shareParams
                onShareStateChanged:^(SSDKResponseState state, SSDKPlatformType platformType, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error, BOOL end) {
                    
