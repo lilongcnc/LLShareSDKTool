@@ -5,7 +5,7 @@
 ![效果图](http://upload-images.jianshu.io/upload_images/594219-d4f0b8caf7eeebf4.gif?imageMogr2/auto-orient/strip)
 
 ###由来
-前段实际逛 Miss唐 小姐的 GitHub 发现她封装了友盟的社会化分享组件.恰巧我们公司是 shareSDK的,并不一样.然而合在一起,也是市面上最主流的两种第三方分享框架了.所以今天把公司基于 shareSDK 的分享封装贴出来.供大家直接使用. 移步 Miss唐 的友盟分享地址: [点我啊](https://github.com/saitjr/STShareTool)
+前段时间逛 Miss唐 小姐的 GitHub 发现她封装了友盟的社会化分享组件.恰巧我们公司是 shareSDK的,并不一样.然而合在一起,也是市面上最主流的两种第三方分享框架了.所以今天把公司基于 shareSDK 的分享封装贴出来.供大家直接使用. 移步 Miss唐 的友盟分享地址: [点我啊](https://github.com/saitjr/STShareTool)
 
 ###关于第三方的社会化分享
 关于介入的细节, Miss唐 GitHub 的介绍下边已经说得很清楚,这里我就简单提几点:
