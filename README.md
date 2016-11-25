@@ -1,3 +1,13 @@
+
+>
+---------------  LLOpenShareTool
+>
+于项目和安装包瘦身的考虑，已经不推荐这个项目了，但是关于分享的一些知识还是推荐大家看一下。
+推荐OpenShare啊，集成登录，分享，支付。[OpenShare](https://github.com/100apps/openshare)
+移步这里：[LLOpenShareTool](https://github.com/lilongcnc/LLOpenShareTool)
+
+
+-----------
 # LLShareSDKTool
 基于第三方分享ShareSDK封装的一套分享框架
 
